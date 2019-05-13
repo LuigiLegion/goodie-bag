@@ -13,6 +13,9 @@ const Candy = db.define('candy', {
   },
   quantity: {
     type: Sequelize.INTEGER,
+    validate: {
+      max: 10,
+    },
   },
   imageUrl: {
     type: Sequelize.STRING,
