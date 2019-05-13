@@ -1,6 +1,24 @@
 const Sequelize = require('sequelize');
 const db = require('../database');
 
-module.exports = db.define('candy', {
+const Candy = db.define('candy', {
   // define your model here!
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  description: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  quantity: {
+    type: Sequelize.INTEGER,
+  },
+  imageUrl: {
+    type: Sequelize.STRING,
+    defaultValue:
+      'https://static.timesofisrael.com/www/uploads/2013/12/krembo-300x254.jpg',
+  },
 });
+
+module.exports = Candy;
